@@ -1,0 +1,172 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* prevent scrollbars */
+    height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.logout-button:hover {
+    color: red !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    color: white;
+    padding: 0.75rem 1rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.welcome {
+    flex: 1;
+    text-align: center;
+}
+
+.top-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.profile-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    color: black;
+    min-width: 120px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.container-sidebar {
+    display: flex;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 60px; /* collapsed width */
+    background-color: #003366;
+    height: 100vh;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    position: fixed;
+    top: 10;
+    left: 0;
+}
+
+.sidebar:hover {
+    width: 200px; /* expanded width */
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    border-left: 4px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.sidebar nav a:hover {
+    background-color: #444;
+    border-left-color: #0d6efd; /* bootstrap blue or change as needed */
+}
+
+.sidebar nav a .icon {
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sidebar nav a .text {
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar:hover nav a .text {
+    opacity: 1;
+}
+
+.main-content {
+    margin-left: 60px;
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ main.main-content {
+    margin-left: 200px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    min-height: 100vh;
+}

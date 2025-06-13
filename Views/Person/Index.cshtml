@@ -1,0 +1,42 @@
+﻿@model IEnumerable<GacusanIII_UserManagement.Models.Person>
+
+@{
+    ViewData["Title"] = "Persons List";
+}
+
+<h2>Persons List</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Person</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date Created</th>
+            <th>Date Updated</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Firstname</td>
+                <td>@person.Lastname</td>
+                <td>@person.Email</td>
+                <td>@person.DateCreated.ToString("g")</td>
+                <td>@person.DateUpdated?.ToString("g")</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@person.Id" class="btn btn-warning btn-sm">Update</a>
+                    <a asp-action="Delete" asp-route-id="@person.Id" class="btn btn-danger btn-sm"
+                       onclick="return confirm('Are you sure you want to delete this person?')">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
